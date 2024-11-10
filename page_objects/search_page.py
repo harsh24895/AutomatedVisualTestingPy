@@ -6,6 +6,7 @@ class SearchPage:
         self.driver = driver
 
     def filter_books(self,search_text):
+        #Selenium just removed that method in version 4.3.0. so we need to used find_element(By.ID,'searchBar') this way so make sure need to make change for css_selector below line 14
         element = self.driver.find_element(By.ID,'searchBar')
         element.send_keys(search_text)
 
