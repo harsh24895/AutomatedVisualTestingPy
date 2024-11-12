@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-
+#Here we have created the class
 class SearchPage:
     def __init__(self, driver):
         self.driver = driver
@@ -9,6 +9,7 @@ class SearchPage:
         #Selenium just removed that method in version 4.3.0. so we need to used find_element(By.ID,'searchBar') this way so make sure need to make change for css_selector below line 14
         element = self.driver.find_element(By.ID,'searchBar')
         element.send_keys(search_text)
+
 
     def verify_visible_books_by_title(self,expected_title):
         elements = self.driver.find_element_by_css_selector(
