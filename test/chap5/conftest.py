@@ -1,6 +1,8 @@
 import pytest
 from applitools.selenium import Eyes
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.drivers.chrome import ChromeDriver
 
 from config.base import APPLITOOLS_API_KEY
 
@@ -9,6 +11,7 @@ APP_UNDER_TEST = 'C:/Users/Harsh/Downloads/automated-visual-testing-master/autom
 
 @pytest.fixture(scope='function')
 def driver():
+    #if they throw chrome version error just check the autual chrome version and install the new chromedriver and paste autual C location
     driver = webdriver.Chrome()
     driver.get(APP_UNDER_TEST)
     yield driver

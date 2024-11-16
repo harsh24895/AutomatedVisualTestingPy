@@ -8,7 +8,7 @@ from test.chap5.conftest import validate_window
 def test_filter_book(eyes, driver):
     page = SearchPage(driver)
     page.filter_books('Agile')
-    # sleep(5)
+    #sleep(5)
     # result = page.verify_visible_books_by_title('Agile Testing')
     # assert_that(result).is_equal_to(True)
 
