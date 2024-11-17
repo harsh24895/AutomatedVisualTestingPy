@@ -8,13 +8,15 @@ from webdriver_manager.drivers.chrome import ChromeDriver
 from config.base import APPLITOOLS_API_KEY
 
 APP_NAME = 'automation_bookstore'
+#Here we are using APP_NAMEE and APP_UNDER_TESTt for another example if need to test on local find then just comment thsi two
+APP_NAMEE = 'the-internet'
 APP_UNDER_TEST = 'C:/Users/Harsh/Downloads/automated-visual-testing-master/automated-visual-testing-master/website/index.html'
-
+APP_UNDER_TESTt = 'https://the-internet.herokuapp.com/dynamic_content'
 @pytest.fixture(scope='function')
 def driver():
     #if they throw chrome version error just check the autual chrome version and install the new chromedriver and paste autual C location
     driver = webdriver.Chrome()
-    driver.get(APP_UNDER_TEST)
+    driver.get(APP_UNDER_TESTt)
     yield driver
     driver.quit()
 @pytest.fixture(scope='function')
@@ -39,7 +41,7 @@ def validate_window(driver,eyes,tag=None):
     close_yes(eyes)
 
 def open_eyes(driver,eyes):
-    eyes.open(driver,APP_NAME,test_name=get_test_name())
+    eyes.open(driver,APP_NAMEE,test_name=get_test_name())
 
 
 def close_yes(eyes):
