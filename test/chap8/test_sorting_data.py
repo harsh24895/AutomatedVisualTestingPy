@@ -1,7 +1,7 @@
 import pytest
 
 
-from test.chap8.SotableTablePage import SortableTablePage
+from test.chap8.SortableTablePage import SortableTablePage
 
 
 @pytest.fixture(scope='module')
@@ -15,6 +15,7 @@ def setup_suite(manager,driver):
     driver.get(app_under_test)
     driver.maximize_window()
 
+@pytest.fixture(scope='function',autouse=True)
 def setup_eyes(request,setup_suite,manager):
     test_name =request.functions.__name__
     manager.open_eyes(test_name)
